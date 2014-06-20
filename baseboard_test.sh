@@ -38,7 +38,7 @@ ethernet_test() {
 case "$1" in
 start)
 	echo "############ baseboard_test start !! ############" >> /dev/ttyAMA0
-	ethernet_test &
+	ethernet_test
 	audio_test
 	python /home/pi/board_test/lcdtest.py
 	echo "############ baseboard_test end !! ############" >> /dev/ttyAMA0
