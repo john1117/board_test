@@ -27,11 +27,17 @@ ethernet_test() {
 	then
 		echo "Ethernet OK" >> /dev/ttyAMA0
 	else
-		echo "Ethernet FAIL" >> /dev/ttyAMA0
-		echo "Ethernet FAIL" >> /dev/ttyAMA0
-		echo "Ethernet FAIL" >> /dev/ttyAMA0
-		echo "Ethernet FAIL" >> /dev/ttyAMA0
-		echo "Ethernet FAIL" >> /dev/ttyAMA0
+		ping -q -c5 google.com
+		if [ $? -eq 0 ]
+		then
+			echo "Ethernet OK" >> /dev/ttyAMA0
+		else
+			echo "Ethernet FAIL" >> /dev/ttyAMA0
+			echo "Ethernet FAIL" >> /dev/ttyAMA0
+			echo "Ethernet FAIL" >> /dev/ttyAMA0
+			echo "Ethernet FAIL" >> /dev/ttyAMA0
+			echo "Ethernet FAIL" >> /dev/ttyAMA0
+		fi
 	fi
 }
 
